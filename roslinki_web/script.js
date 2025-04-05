@@ -9,7 +9,10 @@ const GameState = {
     plantPrices: {
       corn: 550,
       tomato: 1100,
-      rose: 4200
+      cucumber: 33333,
+      eggplant: 12000,
+      bell_pepper: 24000,
+      rice: 50000
     },
     actionCosts: {
       water: 5,
@@ -20,7 +23,10 @@ const GameState = {
     harvestRewards: {
       corn: 100,
       tomato: 200,
-      rose: 300
+      cucumber: 333,
+      eggplant: 500,
+      bell_pepper: 900,
+      rice: 1500
     }
   };
   
@@ -28,7 +34,7 @@ const GameState = {
     corn: {
       name: "Kukurydza",
       stages: [
-        "images/corn/corn_sampling.png",
+        "images/sampling.png",
         "images/corn/corn_growth_1.png",
         "images/corn/corn_growth_2.png",
         "images/corn/corn_growth_3.png", 
@@ -36,13 +42,13 @@ const GameState = {
         "images/corn/corn_growth_5.png",
         "images/corn/corn_dead.png"
       ],
-      maxWater: 5,
+      maxWater: 10,
       maxStage: 5
     },
     tomato: {
       name: "Pomidor",
       stages: [
-        "images/tomato/tomato_sampling.png",
+        "images/sampling.png",
         "images/tomato/tomato_growth_1.png",
         "images/tomato/tomato_growth_2.png",
         "images/tomato/tomato_growth_3.png",
@@ -50,23 +56,65 @@ const GameState = {
         "images/tomato/tomato_growth_5.png",
         "images/tomato/tomato_dead.png"
       ],
-      maxWater: 4,
+      maxWater: 8,
       maxStage: 5
     },
-    rose: {
-      name: "Róża",
+    eggplant: {
+      name: "Bakłażan",
       stages: [
-        "images/rose/rose_sampling.png",
-        "images/rose/rose_growth_1.png",
-        "images/rose/rose_growth_2.png",
-        "images/rose/rose_growth_3.png",
-        "images/rose/rose_growth_4.png",
-        "images/rose/rose_growth_5.png",
-        "images/rose/rose_dead.png"
+        "images/sampling.png",
+        "images/eggplant/eggplant_growth_1.png",
+        "images/eggplant/eggplant_growth_2.png",
+        "images/eggplant/eggplant_growth_3.png",
+        "images/eggplant/eggplant_growth_4.png",
+        "images/eggplant/eggplant_growth_5.png",
+        "images/eggplant/eggplant_dead.png"
+      ],
+      maxWater: 6,
+      maxStage: 5
+    },
+    cucumber: {
+      name: "Ogórek",
+      stages: [
+        "images/sampling.png",
+        "images/cucumber/cucumber_growth_1.png",
+        "images/cucumber/cucumber_growth_2.png",
+        "images/cucumber/cucumber_growth_3.png",
+        "images/cucumber/cucumber_growth_4.png",
+        "images/cucumber/cucumber_growth_5.png",
+        "images/cucumber/cucumber_dead.png"
+      ],
+      maxWater: 14,
+      maxStage: 5
+    },
+    bell_pepper: {
+      name: "Papryka",
+      stages: [
+        "images/sampling.png",
+        "images/bell_pepper/bell_pepper_growth_1.png",
+        "images/bell_pepper/bell_pepper_growth_2.png",
+        "images/bell_pepper/bell_pepper_growth_3.png",
+        "images/bell_pepper/bell_pepper_growth_4.png",
+        "images/bell_pepper/bell_pepper_growth_5.png",
+        "images/bell_pepper/bell_pepper_dead.png"
       ],
       maxWater: 3,
       maxStage: 5
-    }
+    },
+    rice: {
+      name: "Ryż",
+      stages: [
+        "images/sampling.png",
+        "images/rice/rice_growth_1.png",
+        "images/rice/rice_growth_2.png",
+        "images/rice/rice_growth_3.png",
+        "images/rice/rice_growth_4.png",
+        "images/rice/rice_growth_5.png",
+        "images/rice/rice_dead.png"
+      ],
+      maxWater: 18,
+      maxStage: 5
+    },
   };
   
   const GARDEN_BEDS = {
@@ -122,7 +170,7 @@ const GameState = {
       GameState.time++;
       updateTimeUI();
       
-      if (GameState.time % 5 === 0) {
+      if (GameState.time % 3 === 0) {
         decreasePlantWater();
       }
     }, 1000);

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Symulator hodowli roślin 🌱</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Portfel gracza -->  
+  <div id="wallet">💰 Monety: <span id="coins">1000</span></div>
+
+  <!-- Zegar -->
+  <div id="game-time">⏱ Czas: <span id="time-display">00:00</span></div>
+  
+  <!-- Pasek wyboru rośliny -->
+  <div class="plant-selection-bar">
+    <h2>Wybierz roślinę:</h2>
+    <div class="plant-options">
+      <div class="plant-option">
+        <img src="images/corn/corn_growth_5.png" data-plant="corn" class="plant-icon" title="Kukurydza 🌽">
+        <div class="plant-price">550 monet</div>
+      </div>
+      <div class="plant-option">
+        <img src="images/tomato/tomato_growth_5.png" data-plant="tomato" class="plant-icon" title="Pomidor 🍅">
+        <div class="plant-price">1100 monet</div>
+      </div>
+      <div class="plant-option">
+        <img src="images/rose/rose_growth_5.png" data-plant="rose" class="plant-icon" title="Róża 🌹">
+        <div class="plant-price">4200 monet</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pasek akcji -->
+  <div class="action-bar">
+    <button id="water">💧 Podlej (-5)</button>
+    <button id="fertilize">💩 Nawóź (-100)</button>
+    <button id="rescue">🚑 Ratuj (-50)</button>
+    <button id="cut">🪓 Ścinaj (FREE)</button>
+    <button id="harvest">🛒 Zbierz plony</button>
+  </div>
+
+  <!-- Ogród z dwoma grządkami -->
+  <div class="garden-container">
+    <div class="garden-bed" id="bed1"></div>
+    <div class="garden-bed locked" id="bed2" data-price="5000">
+      <button class="unlock-bed">Odblokuj za <span class="price">5000</span> monet</button>
+    </div>
+    <div class="garden-bed locked" id="bed3" data-price="66666">
+      <button class="unlock-bed">Odblokuj za <span class="price">66666</span> monet</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

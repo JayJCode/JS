@@ -1,3 +1,7 @@
+/* eslint-env es6 */
+/* jshint esversion: 6 */
+/* jshint esversion: 11 */
+
 // ======================
 // KONFIGURACJA I STANY
 // ======================
@@ -302,8 +306,8 @@ const GameState = {
         const slot = allSlots[slotIndex];
         const plant = GARDEN_BEDS[bedId][slotIndex];
         
-        slot.innerHTML = plant 
-          ? `<img src="${getPlantData(plant.type).stages[plant.stage]}" 
+        slot.innerHTML = plant ?
+              `<img src="${getPlantData(plant.type).stages[plant.stage]}" 
                style="max-height:90%; ${!plant.isAlive ? 'filter:sepia(80%)' : ''}"
                alt="${getPlantData(plant.type).name}">` 
           : '';
